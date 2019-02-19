@@ -37,6 +37,7 @@ class ExperimentSerializer(serializers.ModelSerializer):
     end_date = JSTimestampField()
     proposed_start_date = JSTimestampField()
     variants = ExperimentVariantSerializer(many=True)
+    firefox_version = serializers.SerializerField('firefox_min_version')
 
     class Meta:
         model = Experiment
